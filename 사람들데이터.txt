@@ -1,0 +1,63 @@
+#매크로와 비슷한
+create table yoonhong(
+	key CHAR(20),
+	char_x	 NUMBER(4),
+	char_y	 NUMBER(4),
+	monster   NUMBER(7),
+	time NUMBER(10,3)
+);
+
+#매크로
+create table east_wall(
+	key CHAR(20),
+	char_x	 NUMBER(4),
+	char_y	 NUMBER(4),
+	monster   NUMBER(7),
+	time NUMBER(10,3)
+);
+
+#사람과 비슷한
+create table real_yoonhong(
+	key CHAR(20),
+	char_x	 NUMBER(4),
+	char_y	 NUMBER(4),
+	monster   NUMBER(7),
+	time NUMBER(10,3),
+	block  NUMBER(7)
+);
+
+
+create table car_theater_5(
+	key CHAR(20),
+	char_x	 NUMBER(4),
+	char_y	 NUMBER(4),
+	monster   NUMBER(7)
+);
+
+#매크로
+create table key_block(
+	count	 NUMBER(10)
+);
+
+#매크로와 유사한인간
+create table bad_keyblock(
+	count	 NUMBER(10)
+);
+
+#사람과 유사한인간
+create table good_keyblock(
+	count	 NUMBER(10)
+);
+
+
+create table hoyoung_keyset(
+	skillname	 CHAR(20),
+	key CHAR(20)
+);
+
+
+
+
+select * from ALL_TAB_COLUMNS where TABLE_NAME = 'skilldata';
+
+insert into east_wall VALUES('a',0,0,0,0);

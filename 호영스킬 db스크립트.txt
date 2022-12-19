@@ -1,0 +1,62 @@
+create table skilldata
+(
+skillname VARCHAR(30) NOT NULL,
+skillimage VARCHAR(200) NOT NULL,
+skilltype	  VARCHAR(15) NOT NULL,
+cooltime NUMBER(6,3),
+skilldelay NUMBER(4,3)
+);
+
+insert into skilldata VALUES('animawarrior', 'C:/mycareer/maple_macro/hoyoung_skill/', 'buff' , '0', '560');
+insert into skilldata VALUES('animawarriorwill', 'C:/mycareer/maple_macro/hoyoung_skill/', 'etc' , '300000', '150');
+insert into skilldata VALUES('attack', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'etc' , '0', '0');
+insert into skilldata VALUES('buchaebooster', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '0', '0');
+insert into skilldata VALUES('buchaechain', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '100000', '650');
+insert into skilldata VALUES('chasingghost', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'costbuff' , '25000', '530');
+insert into skilldata VALUES('chosangbi', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'etc' , '0', '0');
+insert into skilldata VALUES('clonesage', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '200000', '620');
+insert into skilldata VALUES('comflagrationchain', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '8000', '750');
+insert into skilldata VALUES('crestofthesollar', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '250000', '770');
+insert into skilldata VALUES('demian', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '180000', '1100');
+insert into skilldata VALUES('doominglight', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'costattack' , '100000', '650');
+insert into skilldata VALUES('earthchain', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '100000', '460');
+insert into skilldata VALUES('energyillusion', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '100000', '620');
+insert into skilldata VALUES('extremeclone', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '200000', '800');
+insert into skilldata VALUES('flyingfan', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'mainattack' , '0', '620');
+insert into skilldata VALUES('flyingnimbus', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'etc' , '0', '0');
+insert into skilldata VALUES('goldcudgel', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '11000', '320');
+insert into skilldata VALUES('grandisgoddess', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '240000', '530');
+insert into skilldata VALUES('inhalingvortex', 'C:/mycareer/maple_macro/hoyoung_skill/', 'costbuff' , '50000', '890');
+insert into skilldata VALUES('jump', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'etc' , '0', '0');
+insert into skilldata VALUES('magiccalabash', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'costattack' , '100000', '480');
+insert into skilldata VALUES('mongyuheaven', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'etc' , '0', '0');
+insert into skilldata VALUES('phantasmalclone', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'costbuff' , '60000', '800');
+insert into skilldata VALUES('rainbowbutterfiles', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'costbuff' , '100000', '500');
+insert into skilldata VALUES('readytodie', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '75000', '570');
+insert into skilldata VALUES('rockchain', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '6000', '620');
+insert into skilldata VALUES('ropeconnect', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '10500', '760');
+insert into skilldata VALUES('spacedistortion', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'costbuff' , '100000', '780');
+insert into skilldata VALUES('spyderinmirror', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'cooltimeattack' , '250000', '860');
+insert into skilldata VALUES('strangegods', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '200000', '800');
+insert into skilldata VALUES('summontiger', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '200000', '800');
+insert into skilldata VALUES('taeuldivine', 'C:/Users/yoonhong/Desktop/maple_macro/hoyoung_skill/', 'buff' , '100000', '440');
+
+
+select skillname, skilldelay, cooltime from skilldata
+                        where (skilltype = 'cooltimeattack' or skilltype = 'cooltimebuff' or skilltype = 'costbuff')
+		and (skillname != 'rockchain' and skillname != 'earthchain');
+
+select skillname, skilldelay, cooltime from skilldata
+                        where (skillname = 'chasingghost' or skillname = 'clonesage' or skillname = 'goldcudgel' or skillname = 'crestofthesollar' or 
+		skillname = 'energyillusion' or skillname = 'extremeclone' or skillname = 'phantasmalclone' or skillname = 'rainbowbutterflies' or 
+		skillname = 'grandisgoddess' or skillname = 'taeuldivine' or skillname = 'summontiger' or skillname = 'strangegods' or 
+		skillname = 'spyderinmirror' or skillname = 'ropeconnect');
+
+
+cooltimeattack
+buff
+cooltimebuff 
+mainattack
+etc
+costbuff
+costattack
