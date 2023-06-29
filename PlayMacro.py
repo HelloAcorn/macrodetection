@@ -1,3 +1,6 @@
+import os
+print(os.getcwd()+r'\images\hunt_count.png')
+
 import cv2
 import keyboard
 import pyautogui
@@ -8,7 +11,6 @@ import random
 import tkinter
 import queue
 import threading
-import os
 import cx_Oracle
 from pynput import keyboard as PYNPUT
 from tensorflow.keras.models import load_model
@@ -23,6 +25,7 @@ THREAD_QUEUE = queue.Queue()  #큐생성
 
 NUMBER_MODEL = load_model('keras_number_model.h5',compile = False)
 RUNE_MODEL = load_model('keras_rune_model.h5',compile = False)
+
 
 #########################매크로 모듈################################
 def prv_dly(num):   #매크로 탐지 방해 지연함수
@@ -168,16 +171,16 @@ def update_DB():
 def get_huntcount():
     global HUNT_COUNT
     try:
-        x, y = pyautogui.locateCenterOnScreen('monster_count.png',confidence = 0.85, region = (0,0,1024,768))
+        x, y = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\monster_count.png',confidence = 0.85, region = (0,0,1024,768))
     except TypeError:
         pass
 
     while WORKS_PROGRAM == True:
-        pyautogui.screenshot(r'C:/mycareer/maple_macro/hunt_count.png' ,
+        pyautogui.screenshot(os.getcwd()+r'/images/hunt_count.png',
                     region = (x+99,y-6,28,8))
         data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
         size = (224, 224)
-        image = Image.open(r'C:/mycareer/maple_macro/hunt_count.png')
+        image = Image.open(os.getcwd()+r'\images\hunt_count.png')
         
         img_x, img_y = image.size
         image_size = int(img_x / 7)
@@ -231,7 +234,7 @@ def Match_Keysetting():
     global KEYSETDATA
     cursor.execute("delete from hoyoung_keyset")    #키셋 갈아엎으면 초기화
     shortcut_x, shortcut_y = pyautogui.locateCenterOnScreen(
-            "shortcut_key.PNG", confidence = 0.85, region = (0,0,1920,1080))
+            os.getcwd()+r"\images\shortcut_key.PNG", confidence = 0.85, region = (0,0,1920,1080))
     cursor.execute("select count(*) from skilldata")
     length = cursor.fetchall()
 
@@ -281,15 +284,15 @@ def Match_Keysetting():
 def play_keyset():
     label.configure(text = "키세팅을 불러오는중...")
     try:
-        x, y = pyautogui.locateCenterOnScreen('setting.PNG',confidence = 0.8, region = (0,0,1920,1080))
+        x, y = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\setting.PNG',confidence = 0.8, region = (0,0,1920,1080))
         mouse_click(x, y,0.05)
         mouse_click(x, y,0.2)
-        x, y = pyautogui.locateCenterOnScreen('shortkey_setting.PNG',confidence = 0.8, region = (0,0,1920,1080))
+        x, y = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\shortkey_setting.PNG',confidence = 0.8, region = (0,0,1920,1080))
         mouse_click(x, y,0.3)
         Match_Keysetting()
     except TypeError:
         try:
-            x, y = pyautogui.locateCenterOnScreen('shortcut_key.PNG',confidence = 0.8, region = (0,0,1920,1080))
+            x, y = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\shortcut_key.PNG',confidence = 0.8, region = (0,0,1920,1080))
             if x !=0 and y != 0:
                 Match_Keysetting()
                 return
@@ -412,8 +415,8 @@ def get_cropped_img(final_box, cut_img):
 
 def decoring_rune():
     image = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(280, 190, 720, 310))), cv2.COLOR_BGR2RGB)
-    cv2.imwrite("wholerune.png", image)
-    img = cv2.imread("wholerune.png", cv2.IMREAD_COLOR)
+    cv2.imwrite(os.getcwd()+r"\images\wholerune.png", image)
+    img = cv2.imread(os.getcwd()+r"\images\wholerune.png", cv2.IMREAD_COLOR)
     print(img)
      
     #NI 이미지 블러
@@ -460,7 +463,7 @@ def decoring_rune():
 def find_rune():#사용하는 기본 사냥스킬(중복되는건 스킬빈도)
     global WORKS_PROGRAM
     while WORKS_PROGRAM == True:
-        rune_cor = pyautogui.locateCenterOnScreen('rune.png', confidence = 0.68, region = (0,0,MAPDATA[2]+50,MAPDATA[1]+50))
+        rune_cor = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\rune.png', confidence = 0.68, region = (0,0,MAPDATA[2]+50,MAPDATA[1]+50))
         if rune_cor != None:
             WORKS_PROGRAM = False
             time.sleep(1)
@@ -475,7 +478,7 @@ def find_rune():#사용하는 기본 사냥스킬(중복되는건 스킬빈도)
 
 def move_char_to_target(rune_x, rune_y):
     while True:
-        char = pyautogui.locateCenterOnScreen('char.PNG', confidence = 0.72, region = (0,0,MAPDATA[2]+50,MAPDATA[1]+50))
+        char = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\char.PNG', confidence = 0.72, region = (0,0,MAPDATA[2]+50,MAPDATA[1]+50))
         char_x, char_y = char
         if rune_x-5 <= char_x and char_x <= rune_x+5 and rune_y-1 <= char_y and char_y <= rune_y+1 :
             break
@@ -570,8 +573,8 @@ def mapsize(size_x):
     global MAPDATA
     try:
         MAPDATA = [0 for i in range(4)]     
-        arcane = pyautogui.locateAllOnScreen('arcaneforce.PNG', confidence = 0.8, region = (0,0,400,300))
-        authentic = pyautogui.locateAllOnScreen('authenticforce.PNG', confidence = 0.8, region = (0,0,400,300))
+        arcane = pyautogui.locateAllOnScreen(os.getcwd()+r'\images\arcaneforce.PNG', confidence = 0.8, region = (0,0,400,300))
+        authentic = pyautogui.locateAllOnScreen(os.getcwd()+r'\images\authenticforce.PNG', confidence = 0.8, region = (0,0,400,300))
         
         arcane = list(arcane)
         authentic = list(authentic)
@@ -582,7 +585,7 @@ def mapsize(size_x):
             authentic = list(authentic).pop()
             MAPDATA[0],MAPDATA[1],dummy1,dummy2 = authentic
         
-        world = pyautogui.locateOnScreen('world.PNG', confidence = 0.85, region = (0,0,400,800))
+        world = pyautogui.locateOnScreen(os.getcwd()+r'\images\world.PNG', confidence = 0.85, region = (0,0,400,800))
         MAPDATA[2],MAPDATA[3],wid,hei = world
         MAPDATA[2] = MAPDATA[2] + wid - size_x
         MAPDATA[0] = MAPDATA[0] + size_x
@@ -603,7 +606,7 @@ def update_character():
     global CHAR_XY
     while WORKS_PROGRAM == True:
         try:
-            char = pyautogui.locateCenterOnScreen('char.PNG', confidence = 0.72, region = (0,0,MAPDATA[2]+50,MAPDATA[1]+50))
+            char = pyautogui.locateCenterOnScreen(os.getcwd()+r'\images\char.PNG', confidence = 0.72, region = (0,0,MAPDATA[2]+50,MAPDATA[1]+50))
             CHAR_XY[0], CHAR_XY[1] = char
             time.sleep(0.15)
         except TypeError:   #char를 못찾았을때
@@ -644,7 +647,7 @@ def give_buff(key,delay,cooltime):
 
 #게임화면을 좌상단에 고정시켜준다.
 def set_game():
-    center = pyautogui.locateCenterOnScreen("mapleicon.png", confidence = 0.9)
+    center = pyautogui.locateCenterOnScreen(os.getcwd()+r"\images\mapleicon.png", confidence = 0.9)
     x, y = center
     x = x+30
     if (x>50 and y>50):

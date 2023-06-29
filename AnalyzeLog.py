@@ -334,8 +334,6 @@ test_loader = DataLoader(test_dataset, batch_size=5, shuffle=True, drop_last=Tru
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-
-
 for i in range(len(SEEDS)):
     np.random.seed(SEEDS[i])
     torch.manual_seed(SEEDS[i])
@@ -366,8 +364,6 @@ for i in range(len(SEEDS)):
         #    print('Epoch:', '%04d' % (epoch), 'loss =', '{:.9f}'.format(avg_loss))
                 
     print('학습 종료')
-
-
 
 
     model.eval()          # 신경망을 평가 모드로 전환
