@@ -1,15 +1,9 @@
 # 0. 목차:link:   
-<H4>:one: ELECMUSK 팀 소개
+<H4>:one: 매크로 제작
  <br>
-<H4>:two: Project 목 적   
+<H4>:two: 데이터 전처리 
  <br>
-<H4>:three: Project 기 획   
- <br>
-<H4>:four: Project 설 계   
- <br>
-<H4>:five: 기 능 시 연   
- <br>
-<H4>:six: Collaboration   
+<H4>:three: 딥러닝
  <br>
 
 # 졸업 논문 - 키 로거를 이용한 매크로와 사용자 구별 시스템.:link:
