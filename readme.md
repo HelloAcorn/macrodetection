@@ -5,8 +5,7 @@
 
 기존 20~30분의 탐지 시간이 걸리던 성능을 <b>30초만에 98%정확도</b>로 구분할 수 있게 되면서 <b>최대 60배</b>의 성능향상이 이루어짐.
 
-# 졸업 논문 - 키 로거를 이용한 매크로와 사용자 구별 시스템.:link:
-
+# 발표자료.
 
 ![1](https://github.com/ilovegalio/macrodetection/assets/77008882/31ebf585-5b94-41d6-92ba-4a53a844717f)
 ![2](https://github.com/ilovegalio/macrodetection/assets/77008882/48a3bef5-882b-481b-b95b-d5c47a80af64)
