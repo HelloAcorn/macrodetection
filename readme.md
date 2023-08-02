@@ -15,6 +15,8 @@
 
 ![3](https://github.com/ilovegalio/macrodetection/assets/77008882/a1356408-56f5-4a69-9087-f9b749f698d2)
 
+<H2>:one: 매크로 제작
+ 
 ![4](https://github.com/ilovegalio/macrodetection/assets/77008882/06af52b8-d62e-4f49-b367-2d88bac960fc)
 
 ![5](https://github.com/ilovegalio/macrodetection/assets/77008882/03030a54-baf0-4b8f-bfa9-fc9f3b8bf716)
@@ -27,6 +29,8 @@
 
 ![9](https://github.com/ilovegalio/macrodetection/assets/77008882/692bf899-f5c1-4cdd-9649-77f6d2320fb8)
 
+<H2>:two: 데이터 전처리 
+ 
 ![10](https://github.com/ilovegalio/macrodetection/assets/77008882/cf0c251c-fa20-4f5c-924d-68bc0ae1df43)
 
 ![11](https://github.com/ilovegalio/macrodetection/assets/77008882/755a2ec1-ff44-4a30-a789-8ac25519cbb5)
@@ -35,6 +39,8 @@
 
 ![13](https://github.com/ilovegalio/macrodetection/assets/77008882/922b039e-9bf0-4efb-973c-113ab625d120)
 
+<H2>:three: 딥러닝
+ 
 ![14](https://github.com/ilovegalio/macrodetection/assets/77008882/1562e76c-92ea-4eb6-b220-76f5e5112400)
 
 ![15](https://github.com/ilovegalio/macrodetection/assets/77008882/62998b55-28ed-4e25-aa43-b86deec9f082)
